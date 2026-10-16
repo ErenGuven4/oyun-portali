@@ -22,5 +22,94 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Markdown'dan gelen yazı gövdesi. */
+.yazi {
+  line-height: 1.75;
+}
+
+.yazi > * + * {
+  margin-top: 1.25em;
+}
+
+.yazi h2 {
+  margin-top: 2.5em;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.yazi h3 {
+  margin-top: 2em;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.yazi a {
+  color: var(--color-sky-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.yazi ul,
+.yazi ol {
+  padding-left: 1.5em;
+}
+
+.yazi ul {
+  list-style: disc;
+}
+
+.yazi ol {
+  list-style: decimal;
+}
+
+.yazi li + li {
+  margin-top: 0.4em;
+}
+
+.yazi blockquote {
+  border-left: 3px solid var(--color-slate-300);
+  padding-left: 1em;
+  font-style: italic;
+  color: var(--color-slate-600);
+}
+
+.yazi code {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.875em;
+  background: var(--color-slate-100);
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+}
+
+.yazi pre {
+  background: var(--color-slate-100);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.yazi pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.85em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .yazi a {
+    color: var(--color-sky-400);
+  }
+
+  .yazi blockquote {
+    border-left-color: var(--color-slate-700);
+    color: var(--color-slate-400);
+  }
+
+  .yazi code,
+  .yazi pre {
+    background: var(--color-slate-900);
+  }
 }
